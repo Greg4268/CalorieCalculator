@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calorie Predictor</title>
+    <link href="./styles/index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Calorie Predictor</h1>
+      <form id="caloriePredictorForm">
+        <!-- Movement Level Selection -->
+        <label for="movementLevel">Movement Level:</label>
+        <select id="movementLevel" name="movementLevel">
+          <option value="sedentary">Sedentary</option>
+          <option value="light">Lightly Active</option>
+          <option value="moderate">Moderately Active</option>
+          <option value="active">Active</option>
+          <option value="veryActive">Very Active</option>
+        </select>
+
+        <!-- Weight Input -->
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" placeholder="age" min="0" />
+
+        <!-- Gender Selection -->
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+
+        <!-- Height Input -->
+        <label for="heightFeet">Height:</label>
+        <div>
+          <input
+            type="number"
+            id="heightFeet"
+            name="heightFeet"
+            placeholder="Feet"
+            min="0"
+          />
+          <input
+            type="number"
+            id="heightInches"
+            name="heightInches"
+            placeholder="Inches"
+            min="0"
+            max="11"
+          />
+        </div>
+
+        <!-- Weight Input -->
+        <label for="weight">Weight (lbs):</label>
+        <input
+          type="number"
+          id="weight"
+          name="weight"
+          placeholder="Weight"
+          min="0"
+        />
+
+        <!-- Body Fat Percentage Input -->
+        <label for="bodyFat">Body Fat Percentage (%):</label>
+        <input
+          type="number"
+          id="bodyFat"
+          name="bodyFat"
+          placeholder="Body Fat %"
+          min="0"
+          max="100"
+        />
+
+        <!-- Submit Button -->
+        <button type="button" id="submitData" onclick="calculateCalories()">
+          Calculate Calories
+        </button>
+      </form>
+
+      <!-- Results Section -->
+      <div id="results">
+        <h2>Calorie Burn Results</h2>
+        <p id="dailyCalories">Daily Calorie Burn: <span>-</span> kcal</p>
+        <p id="weeklyCalories">Weekly Calories Burn: <span>-</span> kcal</p>
+      </div>
+      <div id="results">
+        <h2>To Lose...</h2>
+        <p id="pound">1 lb per week: <span>-</span> kcal</p>
+        <p id="half">.5 lb per week: <span>-</span> kcal</p>
+      </div>
+    </div>
+
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>
